@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	_ "encoding/json"
 	"fmt"
 	"github.com/xuri/excelize/v2"
 	"io"
