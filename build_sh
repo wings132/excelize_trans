@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# 编译适用于本机的版本
+go build -o excelize_trans
+
+# 编译 Linux 版本
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o excelize_trans_linux
+
+# 编译 Windows 64 位版本
+CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o excelize_trans_win64
+
+# 编译 MacOS 版本
+CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o excelize_trans_macos
