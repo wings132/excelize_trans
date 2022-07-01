@@ -75,7 +75,11 @@ func xlsx2json(path string, filename string) {
 		}
 		data, _ := json.Marshal(&bigmap)
 		n, err1 := io.WriteString(f, string(data))
-		fmt.Println("写入文件：", sheetname, " 字节数：", n, err1)
+		if err1 != nil {
+			panic(any(err1))
+		}
+		fmt.Println("写入文件：", sheetname, " 字节数：", n)
+		f.Close()
 	}
 }
 
